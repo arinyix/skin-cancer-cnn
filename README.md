@@ -1,4 +1,4 @@
-# 🔬 Detector de Melanoma com Visão Computacional
+# 🔬 Detector de Melanoma com CNN
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.8-orange.svg)
