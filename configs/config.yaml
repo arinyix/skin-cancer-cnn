@@ -1,0 +1,20 @@
+﻿seed: 42
+dataset: HAM10000
+img_size: 224
+batch_size: 32
+num_workers: 2
+model_name: resnet50
+epochs: 30
+lr: 0.0003
+weight_decay: 0.01
+train_val_split: 0.8
+augmentations:
+  rotation: 20
+  hflip: true
+  vflip: true
+  brightness: 0.1
+  contrast: 0.1
+loss: focal
+class_weights: true
+scheduler: step_lr
+checkpoint_dir: reports/checkpoints/
