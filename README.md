@@ -1,4 +1,4 @@
-# 🔬 Detector de Melanoma com Visão Computacional
+# 🔬 Detector de Melanoma com CNN
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.8-orange.svg)
@@ -346,13 +346,3 @@ print(torch.cuda.get_device_name(0))  # Nome da sua GPU
 - [ResNet Paper (He et al., 2015)](https://arxiv.org/abs/1512.03385)
 - [HAM10000 Dataset Paper](https://www.nature.com/articles/sdata2018161)
 - [Albumentations Documentation](https://albumentations.ai/docs/)
-
----
-
-<div align="center">
-
-**⭐ Se este projeto foi útil para você, considere dar uma estrela no GitHub! ⭐**
-
-Desenvolvido com ❤️ por estudantes de Ciência da Computação da UFOPA
-
-</div>

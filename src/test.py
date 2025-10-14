@@ -4,6 +4,8 @@ import os
 import sys
 import yaml
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Usar backend sem interface gráfica
 import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
@@ -55,7 +57,13 @@ def main():
     print(f"\n🧠 Carregando modelo de {ckpt_path}...")
     model = SkinCancerResNet50(pretrained=False)
     checkpoint = torch.load(ckpt_path, map_location=device, weights_only=False)
-    model.load_state_dict(checkpoint['model_state_dict'])
+    
+    # Verifica se é um dicionário com 'model_state_dict' ou se são os pesos diretamente
+    if isinstance(checkpoint, dict) and 'model_state_dict' in checkpoint:
+        model.load_state_dict(checkpoint['model_state_dict'])
+    else:
+        model.load_state_dict(checkpoint)
+    
     model.to(device)
     model.eval()
     print("✅ Modelo carregado!")

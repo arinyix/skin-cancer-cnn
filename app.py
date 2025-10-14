@@ -43,7 +43,12 @@ def load_model():
     model = SkinCancerResNet50(pretrained=False)
 
     checkpoint = torch.load(checkpoint_path, map_location=torch.device('cpu'), weights_only=False)
-    model.load_state_dict(checkpoint['model_state_dict'])
+    
+    # Verifica se é um dicionário com 'model_state_dict' ou se são os pesos diretamente
+    if isinstance(checkpoint, dict) and 'model_state_dict' in checkpoint:
+        model.load_state_dict(checkpoint['model_state_dict'])
+    else:
+        model.load_state_dict(checkpoint)
 
     model.eval()
 
